@@ -101,24 +101,18 @@ class LinkedList:
         print(f"\nElement {data} not found, cannot delete")
         return
 
-    # reverse list
+   # reverse list
     def reverse(self) -> None:
-        if self.head is None:
+        if self.is_empty():
             return
 
         current_node = self.head
-        prev_node = None
+        trail_current_node = None
 
         while current_node is not None:
-            # Track the next node
             next_node = current_node.next
-
-            # Modify the current node
-            current_node.next = prev_node
-
-            # Update prev and current
-            prev_node = current_node
+            current_node.next = trail_current_node
+            trail_current_node = current_node
             current_node = next_node
 
-        self.head = prev_node
-        return
+        self.head = trail_current_node
