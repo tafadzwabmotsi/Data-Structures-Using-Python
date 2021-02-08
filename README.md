@@ -4,4 +4,4 @@
 * Stack
 * Queue
 * Graph
-* Hash Map
+* Binary Search Trees
